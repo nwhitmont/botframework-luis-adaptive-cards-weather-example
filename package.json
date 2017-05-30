@@ -4,14 +4,14 @@
   "description": "Bot Builder LUIS Action Binding - Samples",
   "author": "Microsoft Corp.",
   "license": "MIT",
-  "main": "bot.js",
+  "main": "index.js",
   "engines": {
     "node": "6.10.2",
     "npm": "3.10.10"
   },
   "scripts": {
     "preinstall": "cd luis-actions; npm install; cd ../;",
-    "start": "node bot"
+    "start": "node index"
   },
   "dependencies": {
     "botbuilder": "^3.8.3",
