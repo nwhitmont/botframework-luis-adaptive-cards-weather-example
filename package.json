@@ -5,6 +5,10 @@
   "author": "Microsoft Corp.",
   "license": "MIT",
   "main": "bot.js",
+  "engines": {
+    "node": "6.10.3",
+    "npm": "3.10.10"
+  },
   "scripts": {
     "preinstall": "cd luis-actions; npm install; cd ../;",
     "start": "node bot"
