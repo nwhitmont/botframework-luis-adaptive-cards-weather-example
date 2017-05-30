@@ -1,0 +1,23 @@
+{
+  "name": "botbuilder-luis-actionbinding-samples",
+  "version": "1.0.0",
+  "description": "Bot Builder LUIS Action Binding - Samples",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "main": "bot.js",
+  "scripts": {
+    "preinstall": "cd luis-actions; npm install; cd ../;",
+    "start": "node bot"
+  },
+  "dependencies": {
+    "botbuilder": "^3.8.3",
+    "dotenv-extended": "^1.0.4",
+    "json-stringify-pretty-compact": "^1.0.4",
+    "jsonpath": "^0.2.10",
+    "lodash": "^4.17.4",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1",
+    "restify": "^4.3.0",
+    "schema-inspector": "^1.6.8"
+  }
+}
