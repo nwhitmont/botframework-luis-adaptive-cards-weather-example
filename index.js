@@ -17,16 +17,31 @@ var luisModelUrl = process.env.LUIS_MODEL_URL;
 
 // init restify server config
 var server = restify.createServer();
+server.use(restify.bodyParser());
+
 // bind server to port & display start message
 server.listen(process.env.port || process.env.PORT || 3978, function () {
     console.log(`${server.name} listening to ${server.url}`);
 });
 
 // status route
-server.get('/', function (request, response) {
-    response.send(200, {status: 'online'});
-});
+// server.get('/', function (request, response) {
+//     response.send(200, {status: 'online'});
+// });
 
+// chat page
+server.get('/', restify.serveStatic({
+  directory: './public',
+  default: 'index.html'
+}));
+server.get('/directline', restify.serveStatic({
+    directory: './public',
+    default: 'index.html'
+}));
+server.get('/webchat', restify.serveStatic({
+    directory: './public',
+    default: 'index.html'
+}));
 // init chat connector
 var connector = new builder.ChatConnector({appId: process.env.MICROSOFT_APP_ID, appPassword: process.env.MICROSOFT_APP_PASSWORD});
 // bind chat connector to /api/messages route
